@@ -659,6 +659,19 @@ def get_channel_info(channel_id):
 def generate_incident_summary(messages, channel_id):
     """Generate a comprehensive summary of the incident using AI"""
     try:
+        # Get channel info to extract hospital name
+        channel_info = get_channel_info(channel_id)
+        hospital_name = "Unknown Hospital"
+        
+        if channel_info:
+            channel_name = channel_info.get("name", "")
+            # Extract hospital from channel name pattern: incident-{issue_key}-{date}-{hospital_slug}
+            name_parts = channel_name.split("-")
+            if len(name_parts) >= 4 and channel_name.startswith("incident-"):
+                hospital_slug = name_parts[-1]  # Last part should be hospital
+                # Convert slug back to readable format
+                hospital_name = hospital_slug.replace("-", " ").title()
+        
         # Format messages for AI analysis with Eastern time
         formatted_messages = []
         eastern_tz = datetime.timezone(datetime.timedelta(hours=-4))  # EDT, adjust for DST as needed
@@ -684,12 +697,12 @@ IMPORTANT: Do not use asterisks (*) or underscores (_) for formatting - use plai
 
 Format the summary with these sections:
 
-🚨 CARE System Outage: A Thrilling Rescue Mission!
+🚨 {hospital_name} System Outage: A Thrilling Rescue Mission!
 
-This incident report summarizes the swift resolution of a CARE system outage impacting all workstations. Let's dive into the exciting details!
+This incident report summarizes the swift resolution of a {hospital_name} system outage impacting all workstations. Let's dive into the exciting details!
 
 🎬 Key Events and Timeline:
-• 02:44:40 PM EDT: 🚨 Incident ISD-11345 reported - All CARE workstations unable to process treatments. Nick Monticello bravely sounds the alarm!
+• 02:44:40 PM EDT: 🚨 Incident ISD-11345 reported - All {hospital_name} workstations unable to process treatments. Nick Monticello bravely sounds the alarm!
 • 02:45:12 PM EDT: FireBot 🤖 springs into action, creating tickets and gathering info
 • 02:45:53 PM EDT: Nick discovers the culprit - a crashed job responsible for treatments! 🔍
 • 02:46:04 PM EDT: Victory! Nick restarts the rogue job and confirms everything's back online 💪
@@ -700,7 +713,7 @@ This incident report summarizes the swift resolution of a CARE system outage imp
 • Development Team: Standing by to prevent future incidents 💻
 
 📊 Current Status:
-🏁 Incident Resolved! The CARE system is back up and running smoothly.
+🏁 Incident Resolved! The {hospital_name} system is back up and running smoothly.
 
 🎯 Key Actions Taken:
 • Immediate reporting and clear communication
