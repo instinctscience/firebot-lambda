@@ -48,6 +48,11 @@ if GEMINI_MODEL in MODEL_MAPPING:
 JIRA_HOSPITAL_FIELD = os.environ.get("JIRA_HOSPITAL_FIELD", "customfield_10297")
 JIRA_SLACK_CHANNEL_FIELD = os.environ.get("JIRA_SLACK_CHANNEL_FIELD", "customfield_10250")  # Field for Slack channel link
 
+# Primary Fire Tickets channel configuration
+# Bot will ONLY process tickets from this channel to prevent unwanted incident channel creation
+PRIMARY_FIRE_CHANNEL_ID = os.environ.get("PRIMARY_FIRE_CHANNEL_ID", "C615MLUPP")  # #allpaws-firemode
+PRIMARY_FIRE_CHANNEL_NAME = os.environ.get("PRIMARY_FIRE_CHANNEL_NAME", "allpaws-firemode")  # For logging/debugging
+
 # DynamoDB configuration
 DYNAMODB_TABLE_NAME = os.environ.get("DYNAMODB_TABLE_NAME", "firebot-coordination")
 DYNAMODB_REGION = os.environ.get("AWS_REGION", "us-east-1")
@@ -296,7 +301,11 @@ def mark_incident_completed(issue_key):
 
 # --- CLIENTS AND HEADERS ---
 # Configure Gemini client globally
-genai.configure(api_key=GEMINI_API_KEY)
+if GEMINI_API_KEY:
+    print(f"✅ Gemini API key configured (length: {len(GEMINI_API_KEY)})")
+    genai.configure(api_key=GEMINI_API_KEY)
+else:
+    print("⚠️ WARNING: GEMINI_API_KEY is not set!")
 
 SLACK_HEADERS = {
     "Authorization": f"Bearer {SLACK_BOT_TOKEN}",
@@ -451,16 +460,50 @@ def is_incident_channel(channel_id):
             headers=SLACK_HEADERS,
             params={"channel": channel_id}
         ).json()
-        
+
         if not response.get("ok"):
             print(f"Could not get channel info: {response.get('error')}")
             return False
-        
+
         channel_name = response.get("channel", {}).get("name", "")
         return channel_name.startswith("incident-")
-        
+
     except Exception as e:
         print(f"Error checking if incident channel: {e}")
+        return False
+
+def is_primary_fire_channel(channel_id):
+    """Check if the channel is the primary Fire Tickets channel where bot should listen for new incidents"""
+    try:
+        # Primary check: Compare channel ID (most reliable)
+        if channel_id == PRIMARY_FIRE_CHANNEL_ID:
+            print(f"✅ Message from primary fire channel (ID match): {channel_id}")
+            return True
+
+        # Fallback: Get channel name for logging
+        response = requests.get(
+            "https://slack.com/api/conversations.info",
+            headers=SLACK_HEADERS,
+            params={"channel": channel_id}
+        ).json()
+
+        if response.get("ok"):
+            channel_name = response.get("channel", {}).get("name", "")
+
+            # Secondary check: Compare by name if configured
+            if channel_name == PRIMARY_FIRE_CHANNEL_NAME:
+                print(f"✅ Message from primary fire channel (name match): {channel_name}")
+                return True
+
+            print(f"⚠️ Channel {channel_name} ({channel_id}) is not the primary fire channel (expected: {PRIMARY_FIRE_CHANNEL_NAME}/{PRIMARY_FIRE_CHANNEL_ID})")
+        else:
+            print(f"⚠️ Channel {channel_id} is not the primary fire channel")
+
+        return False
+
+    except Exception as e:
+        print(f"Error checking if primary fire channel: {e}")
+        # On error, be conservative and reject to prevent unwanted channel creation
         return False
 
 def process_firebot_command(event_data, user_id):
@@ -810,8 +853,28 @@ def post_message(channel_id, text):
 def process_fire_ticket(event_data, user_id):
     event = event_data["event"]
     text = event.get("text", "")
-    print(f"Processing message: {text}")
-    
+    source_channel_id = event.get("channel", "")
+
+    print(f"Processing message from channel {source_channel_id}: {text}")
+
+    # CRITICAL FILTER #1: Ignore tickets posted in incident channels
+    # This prevents spawning new incident channels from within existing incident channels
+    if is_incident_channel(source_channel_id):
+        print(f"⛔ Ignoring ticket in incident channel {source_channel_id}")
+        print(f"   → Tickets should only be posted in #{PRIMARY_FIRE_CHANNEL_NAME}")
+        print(f"   → Subsequent tickets in incident channels are NOT processed")
+        return
+
+    # CRITICAL FILTER #2: Only process tickets from the primary fire channel
+    # This ensures the bot only responds to tickets in #allpaws-firemode
+    if not is_primary_fire_channel(source_channel_id):
+        print(f"⛔ Ignoring ticket from non-primary channel {source_channel_id}")
+        print(f"   → Only monitoring #{PRIMARY_FIRE_CHANNEL_NAME} ({PRIMARY_FIRE_CHANNEL_ID})")
+        return
+
+    print(f"✅ Ticket found in #{PRIMARY_FIRE_CHANNEL_NAME} (primary fire channel)")
+    print(f"   → Proceeding with incident channel creation workflow")
+
     # Skip messages from bots to prevent processing our own messages, but allow Jira bot
     jira_bot_id = "B87HWGEMD"  # Jira Cloud bot ID
     jira_app_id = "A2RPP3NFR"  # Jira Cloud app ID
@@ -913,10 +976,23 @@ def process_fire_ticket(event_data, user_id):
         summary_cache_key = f"summary_{issue_key}"
         if summary_cache_key not in processed_events:
             processed_events.add(summary_cache_key)
-            summary = generate_gemini_summary(parsed_data)
-            print(f"Generated summary length: {len(summary)}")
-            post_summary_message(channel_id, summary)
-            print(f"Posted summary for {issue_key}")
+            print(f"Starting summary generation for {issue_key}")
+            print(f"Parsed data keys: {list(parsed_data.keys())}")
+            print(f"Summary length: {len(parsed_data.get('summary', ''))}, Description length: {len(parsed_data.get('description', ''))}")
+
+            try:
+                summary = generate_gemini_summary(parsed_data)
+                print(f"Generated summary length: {len(summary)}")
+                print(f"Summary content preview: {summary[:100]}...")
+                post_summary_message(channel_id, summary)
+                print(f"Posted summary for {issue_key}")
+            except Exception as e:
+                print(f"❌ CRITICAL ERROR generating summary for {issue_key}: {e}")
+                print(f"Error type: {type(e).__name__}")
+                import traceback
+                print(f"Traceback: {traceback.format_exc()}")
+                # Still post a message so users know what happened
+                post_summary_message(channel_id, f"⚠️ Summary generation failed: {str(e)}")
         else:
             print(f"Summary for {issue_key} already posted, skipping")
         
@@ -1470,48 +1546,69 @@ def extract_text_from_adf(adf_content):
 
 def generate_gemini_summary(data):
     """Generates a summary of a Jira ticket using the Gemini API."""
+    print(f"🔍 generate_gemini_summary called with data keys: {list(data.keys())}")
+
     fallback_models = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
     models_to_try = [GEMINI_MODEL] + [m for m in fallback_models if m != GEMINI_MODEL]
-    
+
+    print(f"📋 Models to try: {models_to_try}")
+
     for model_name in models_to_try:
         try:
-            print(f"Trying Gemini model: {model_name}")
+            print(f"🤖 Trying Gemini model: {model_name}")
             model = genai.GenerativeModel(model_name)
-            
+
             # Get the prompt from the data
             prompt = data.get("prompt", "")
             if not prompt:
                 # Fallback to old format if no prompt provided
+                summary = data.get('summary', '')
+                description = data.get('description', '')
+                print(f"📝 Building prompt from summary ({len(summary)} chars) and description ({len(description)} chars)")
+
                 prompt = f"""You are a helpful assistant summarizing incident tickets.
 
 Summary:
-{data.get('summary', '')}
+{summary}
 
 Description:
-{data.get('description', '')}
+{description}
 
 Please provide a concise summary in plain English suitable for a Slack incident channel."""
+            else:
+                print(f"📝 Using provided prompt ({len(prompt)} chars)")
 
+            print(f"🚀 Calling Gemini API with model {model_name}...")
             response = model.generate_content(prompt)
-            
+            print(f"✅ Gemini API responded for model {model_name}")
+
             # Updated response handling for current API
             if hasattr(response, 'text') and response.text:
-                print(f"Successfully generated summary with model: {model_name}")
+                print(f"✅ Successfully generated summary with model: {model_name} ({len(response.text)} chars)")
                 return response.text.strip()
-            elif response.parts:
+            elif hasattr(response, 'parts') and response.parts:
                 summary_text = ''.join(part.text for part in response.parts if hasattr(part, 'text'))
                 if summary_text:
-                    print(f"Successfully generated summary with model: {model_name}")
+                    print(f"✅ Successfully generated summary with model: {model_name} ({len(summary_text)} chars)")
                     return summary_text.strip()
-            
-            print(f"Empty response from model: {model_name}")
-            
+
+            print(f"⚠️ Empty response from model: {model_name}")
+            print(f"Response object: {response}")
+
         except Exception as e:
-            print(f"Error with model {model_name}: {e}")
+            print(f"❌ Error with model {model_name}: {e}")
+            print(f"❌ Error type: {type(e).__name__}")
+            import traceback
+            print(f"❌ Traceback: {traceback.format_exc()}")
+
             if model_name == models_to_try[-1]:  # Last model failed
+                print(f"💥 All models failed, returning fallback message")
                 return "Could not generate summary."
+
+            print(f"🔄 Trying next model...")
             continue  # Try next model
-    
+
+    print(f"💥 Exhausted all models, returning fallback message")
     return "Could not generate summary."
 
 def fetch_jira_attachments(issue_key):

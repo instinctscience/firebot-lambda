@@ -1,0 +1,426 @@
+timestamp,message
+1762387026502,"Skipping our bot's response message to prevent duplicate processing
+"
+1762387026523,"END RequestId: 9df189aa-0003-419f-8950-835041d843f8
+"
+1762387026523,"REPORT RequestId: 9df189aa-0003-419f-8950-835041d843f8	Duration: 93.68 ms	Billed Duration: 94 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387027594,"START RequestId: 21ff049b-805c-4e1b-ad9c-ed0d142c3254 Version: $LATEST
+"
+1762387027594,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""2484"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be453-59a5d88d3be7f89e1b04c20a"", ""x-forwarded-for"": ""18.206.214.133"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387027"", ""x-slack-signature"": ""v0=137df141e143ebfe60ee017296cc4c34375a76d0a9db489fa4e3726d7684edf6""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""18.206.214.133"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCdHhinIAMEMCQ="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:57:07 +0000"", ""timeEpoch"": 1762387027564}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""U09584DT15X\"",\""ts\"":\""1762387025.677779\"",\""bot_id\"":\""B09584DRW4R\"",\""app_id\"":\""A094WLLT2TE\"",\""text\"":\"":rotating_light: **INCIDENT CHANNEL CREATED** :rotating_light:\
+\
+\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\
+\
+:loudspeaker: Please move all communications to <#C09R37Z40US|>\
+\
+I'll help coordinate the incident response there! :robot_face:\"",\""team\"":\""T0HTVG8PJ\"",\""bot_profile\"":{\""id\"":\""B09584DRW4R\"",\""deleted\"":false,\""name\"":\""FireBot\"",\""updated\"":1753221590,\""app_id\"":\""A094WLLT2TE\"",\""user_id\"":\""U09584DT15X\"",\""icons\"":{\""image_36\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_36.jpg\"",\""image_48\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_48.jpg\"",\""image_72\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_72.jpg\""},\""team_id\"":\""T0HTVG8PJ\""},\""blocks\"":[{\""type\"":\""rich_text\"",\""block_id\"":\""v87W\"",\""elements\"":[{\""type\"":\""rich_text_section\"",\""elements\"":[{\""type\"":\""emoji\"",\""name\"":\""rotating_light\"",\""unicode\"":\""1f6a8\""},{\""type\"":\""text\"",\""text\"":\"" **INCIDENT CHANNEL CREATED** \""},{\""type\"":\""emoji\"",\""name\"":\""rotating_light\"",\""unicode\"":\""1f6a8\""},{\""type\"":\""text\"",\""text\"":\""\
+\
+\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\\u2501\
+\
+\""},{\""type\"":\""emoji\"",\""name\"":\""loudspeaker\"",\""unicode\"":\""1f4e2\""},{\""type\"":\""text\"",\""text\"":\"" Please move all communications to \""},{\""type\"":\""channel\"",\""channel_id\"":\""C09R37Z40US\""},{\""type\"":\""text\"",\""text\"":\""\
+\
+I'll help coordinate the incident response there! \""},{\""type\"":\""emoji\"",\""name\"":\""robot_face\"",\""unicode\"":\""1f916\""}]}]}],\""channel\"":\""C615MLUPP\"",\""event_ts\"":\""1762387025.677779\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09RXGXMJ4Q\"",\""event_time\"":1762387025,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkM2MTVNTFVQUCJ9\""}"", ""isBase64Encoded"": false}
+"
+1762387027594,"Event deduplication - Channel: C615MLUPP, User: U09584DT15X, Issue: , Timestamp: 1762387025.677779
+"
+1762387027594,"Message type: bot, Bot ID: B09584DRW4R, App ID: A094WLLT2TE, Subtype: 
+"
+1762387027594,"Slack event_id: 
+"
+1762387027594,"Generated event ID: 3a7fbcf8d000805e
+"
+1762387027594,"Text preview: :rotating_light: **INCIDENT CHANNEL CREATED** :rotating_light:
+"
+1762387027594,"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━...
+"
+1762387027594,"Current cache size: 5
+"
+1762387027594,"Current cache contents: ['43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '8815cf6527eb4a03', '0ecf55ac64e2432a']
+"
+1762387027594,"Checking if event 3a7fbcf8d000805e is already processed...
+"
+1762387027602,"Event 3a7fbcf8d000805e not found in DynamoDB, can process
+"
+1762387027622,"Marked event 3a7fbcf8d000805e as processed in DynamoDB
+"
+1762387027622,"✅ New event detected: 3a7fbcf8d000805e
+"
+1762387027622,"Added to cache: 3a7fbcf8d000805e (cache size: 6)
+"
+1762387027622,"Detected our bot's response message: :rotating_light: **INCIDENT CHANNEL CREATED** :rot...
+"
+1762387027622,"Skipping our bot's response message to prevent duplicate processing
+"
+1762387027643,"END RequestId: 21ff049b-805c-4e1b-ad9c-ed0d142c3254
+"
+1762387027643,"REPORT RequestId: 21ff049b-805c-4e1b-ad9c-ed0d142c3254	Duration: 48.59 ms	Billed Duration: 49 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387029973,"START RequestId: ed3b7b29-7c03-4c2a-9b0f-78464ab037eb Version: $LATEST
+"
+1762387029974,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""1905"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be455-6809857206990361430e1478"", ""x-forwarded-for"": ""13.222.53.167"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387029"", ""x-slack-signature"": ""v0=96c461e7a9e4e1e408143557647d4604890a84bbf3e58227dd8624d7f7489604""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""13.222.53.167"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCdfhNioAMEYUw="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:57:09 +0000"", ""timeEpoch"": 1762387029947}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""U09584DT15X\"",\""ts\"":\""1762387029.287039\"",\""bot_id\"":\""B09584DRW4R\"",\""app_id\"":\""A094WLLT2TE\"",\""text\"":\""<@U04DH7B5K26> We've received your report (ISD-12764) regarding Instinct crashing when accessing patient ax sheet.\
+Thanks for quickly identifying and reporting this issue, Taryn D'Esterre!\
+\
+A developer is en route to investigate. To expedite a resolution, please provide:\
+\"",\""team\"":\""T0HTVG8PJ\"",\""bot_profile\"":{\""id\"":\""B09584DRW4R\"",\""deleted\"":false,\""name\"":\""FireBot\"",\""updated\"":1753221590,\""app_id\"":\""A094WLLT2TE\"",\""user_id\"":\""U09584DT15X\"",\""icons\"":{\""image_36\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_36.jpg\"",\""image_48\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_48.jpg\"",\""image_72\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_72.jpg\""},\""team_id\"":\""T0HTVG8PJ\""},\""blocks\"":[{\""type\"":\""rich_text\"",\""block_id\"":\""TmY\"",\""elements\"":[{\""type\"":\""rich_text_section\"",\""elements\"":[{\""type\"":\""user\"",\""user_id\"":\""U04DH7B5K26\""},{\""type\"":\""text\"",\""text\"":\"" We've received your report (ISD-12764) regarding Instinct crashing when accessing patient ax sheet.\
+Thanks for quickly identifying and reporting this issue, Taryn D'Esterre!\
+\
+A developer is en route to investigate. To expedite a resolution, please provide:\""}]}]}],\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387029.287039\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09QWRHJWN7\"",\""event_time\"":1762387029,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387029974,"Event deduplication - Channel: C09R37Z40US, User: U09584DT15X, Issue: ISD-12764, Timestamp: 1762387029.287039
+"
+1762387029974,"Message type: bot, Bot ID: B09584DRW4R, App ID: A094WLLT2TE, Subtype: 
+"
+1762387029974,"Slack event_id: 
+"
+1762387029974,"Generated event ID: 0ea2c0e473f7f703
+"
+1762387029974,"Text preview: <@U04DH7B5K26> We've received your report (ISD-12764) regarding Instinct crashing when accessing pat...
+"
+1762387029974,"Current cache size: 6
+"
+1762387029974,"Current cache contents: ['43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '8815cf6527eb4a03', '0ecf55ac64e2432a']
+"
+1762387029974,"Checking if event 0ea2c0e473f7f703 is already processed...
+"
+1762387029982,"Event 0ea2c0e473f7f703 not found in DynamoDB, can process
+"
+1762387030002,"Marked event 0ea2c0e473f7f703 as processed in DynamoDB
+"
+1762387030002,"✅ New event detected: 0ea2c0e473f7f703
+"
+1762387030002,"Added to cache: 0ea2c0e473f7f703 (cache size: 7)
+"
+1762387030002,"Detected our bot's response message: <@U04DH7B5K26> We've received your report (ISD-127...
+"
+1762387030002,"Skipping our bot's response message to prevent duplicate processing
+"
+1762387030023,"END RequestId: ed3b7b29-7c03-4c2a-9b0f-78464ab037eb
+"
+1762387030023,"REPORT RequestId: ed3b7b29-7c03-4c2a-9b0f-78464ab037eb	Duration: 48.96 ms	Billed Duration: 49 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387030027,"START RequestId: 17258ef0-d116-464a-8e77-484bef39a296 Version: $LATEST
+"
+1762387030028,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""1565"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be455-162fd8ba5c9f68bd4cdf7031"", ""x-forwarded-for"": ""98.80.150.200"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387029"", ""x-slack-signature"": ""v0=b6c84887f85b29eb7ab94ad0347b0e9197903321c631487ec271bb46024761e2""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""98.80.150.200"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCdfgaeoAMEMWQ="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:57:09 +0000"", ""timeEpoch"": 1762387029958}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""U09584DT15X\"",\""ts\"":\""1762387028.063339\"",\""bot_id\"":\""B09584DRW4R\"",\""app_id\"":\""A094WLLT2TE\"",\""text\"":\"":dart: Incident Summary :dart:\
+\
+Could not generate summary.\"",\""team\"":\""T0HTVG8PJ\"",\""bot_profile\"":{\""id\"":\""B09584DRW4R\"",\""deleted\"":false,\""name\"":\""FireBot\"",\""updated\"":1753221590,\""app_id\"":\""A094WLLT2TE\"",\""user_id\"":\""U09584DT15X\"",\""icons\"":{\""image_36\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_36.jpg\"",\""image_48\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_48.jpg\"",\""image_72\"":\""https:\\/\\/avatars.slack-edge.com\\/2025-07-22\\/9236776408261_3860b910abcdb49cf0d2_72.jpg\""},\""team_id\"":\""T0HTVG8PJ\""},\""blocks\"":[{\""type\"":\""rich_text\"",\""block_id\"":\""81A1X\"",\""elements\"":[{\""type\"":\""rich_text_section\"",\""elements\"":[{\""type\"":\""emoji\"",\""name\"":\""dart\"",\""unicode\"":\""1f3af\""},{\""type\"":\""text\"",\""text\"":\"" Incident Summary \""},{\""type\"":\""emoji\"",\""name\"":\""dart\"",\""unicode\"":\""1f3af\""},{\""type\"":\""text\"",\""text\"":\""\
+\
+Could not generate summary.\""}]}]}],\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387028.063339\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09QZQ274ER\"",\""event_time\"":1762387028,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387030028,"Event deduplication - Channel: C09R37Z40US, User: U09584DT15X, Issue: , Timestamp: 1762387028.063339
+"
+1762387030028,"Message type: bot, Bot ID: B09584DRW4R, App ID: A094WLLT2TE, Subtype: 
+"
+1762387030028,"Slack event_id: 
+"
+1762387030028,"Generated event ID: 21c66745a5d457b5
+"
+1762387030028,"Text: :dart: Incident Summary :dart:
+"
+1762387030028,"Could not generate summary.
+"
+1762387030028,"Current cache size: 7
+"
+1762387030028,"Current cache contents: ['43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '8815cf6527eb4a03', '0ecf55ac64e2432a']
+"
+1762387030028,"Checking if event 21c66745a5d457b5 is already processed...
+"
+1762387030062,"Event 21c66745a5d457b5 not found in DynamoDB, can process
+"
+1762387030082,"Marked event 21c66745a5d457b5 as processed in DynamoDB
+"
+1762387030082,"✅ New event detected: 21c66745a5d457b5
+"
+1762387030082,"Added to cache: 21c66745a5d457b5 (cache size: 8)
+"
+1762387030082,"Detected our bot's response message: :dart: Incident Summary :dart:
+"
+1762387030082,"Could not generate...
+"
+1762387030082,"Skipping our bot's response message to prevent duplicate processing
+"
+1762387030103,"END RequestId: 17258ef0-d116-464a-8e77-484bef39a296
+"
+1762387030103,"REPORT RequestId: 17258ef0-d116-464a-8e77-484bef39a296	Duration: 74.81 ms	Billed Duration: 75 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387030526,"START RequestId: 64eb031f-e57a-4d8e-b4a6-3047969bdfbb Version: $LATEST
+"
+1762387030526,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""749"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be456-32addc102c8b176121acbdc7"", ""x-forwarded-for"": ""13.220.243.166"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387030"", ""x-slack-signature"": ""v0=ce023bbc3e87e2ab5255692c320b2d8c9d031a2b7061d711651e5db5a637a4e4""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""13.220.243.166"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCdkhf8IAMEYpg="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:57:10 +0000"", ""timeEpoch"": 1762387030499}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""subtype\"":\""channel_join\"",\""user\"":\""U04DH7B5K26\"",\""text\"":\""<@U04DH7B5K26> has joined the channel\"",\""inviter\"":\""U09584DT15X\"",\""ts\"":\""1762387029.648749\"",\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387029.648749\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09R380MMMY\"",\""event_time\"":1762387029,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387030526,"Event deduplication - Channel: C09R37Z40US, User: U04DH7B5K26, Issue: , Timestamp: 1762387029.648749
+"
+1762387030526,"Message type: user_channel_join, Bot ID: , App ID: , Subtype: channel_join
+"
+1762387030526,"Slack event_id: 
+"
+1762387030526,"Generated event ID: 2c29796e509e2df6
+"
+1762387030526,"Text: <@U04DH7B5K26> has joined the channel
+"
+1762387030526,"Current cache size: 8
+"
+1762387030526,"Current cache contents: ['21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '8815cf6527eb4a03', '0ecf55ac64e2432a']
+"
+1762387030526,"Checking if event 2c29796e509e2df6 is already processed...
+"
+1762387030542,"Event 2c29796e509e2df6 not found in DynamoDB, can process
+"
+1762387030562,"Marked event 2c29796e509e2df6 as processed in DynamoDB
+"
+1762387030562,"✅ New event detected: 2c29796e509e2df6
+"
+1762387030562,"Added to cache: 2c29796e509e2df6 (cache size: 9)
+"
+1762387030562,"Processing message: <@U04DH7B5K26> has joined the channel
+"
+1762387030562,"No Jira issue key found in text: <@U04DH7B5K26> has joined the channel
+"
+1762387030583,"END RequestId: 64eb031f-e57a-4d8e-b4a6-3047969bdfbb
+"
+1762387030583,"REPORT RequestId: 64eb031f-e57a-4d8e-b4a6-3047969bdfbb	Duration: 56.59 ms	Billed Duration: 57 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387084436,"START RequestId: 26383507-a805-48af-a8ed-697cd80633e9 Version: $LATEST
+"
+1762387084442,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""3557"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be48c-3f1728ba7aba1c8e4e9abce5"", ""x-forwarded-for"": ""44.210.80.73"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387084"", ""x-slack-retry-num"": ""2"", ""x-slack-retry-reason"": ""http_timeout"", ""x-slack-signature"": ""v0=070ca95dc0ab4d07a2d3eb477aebdb433a860439a23277b8ed1b6e880cdec8f6""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""44.210.80.73"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCmAh-CoAMEaOA="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:58:04 +0000"", ""timeEpoch"": 1762387084404}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""U86FMV8AE\"",\""ts\"":\""1762387015.296739\"",\""bot_id\"":\""B87HWGEMD\"",\""app_id\"":\""A2RPP3NFR\"",\""text\"":\""Taryn D'Esterre created a [System] Incident ISD-12764 Instinct crashing when accessing patient ax sheet\"",\""team\"":\""T0HTVG8PJ\"",\""bot_profile\"":{\""id\"":\""B87HWGEMD\"",\""deleted\"":false,\""name\"":\""Jira Cloud\"",\""updated\"":1568126518,\""app_id\"":\""A2RPP3NFR\"",\""user_id\"":\""U86FMV8AE\"",\""icons\"":{\""image_36\"":\""https:\\/\\/avatars.slack-edge.com\\/2018-11-30\\/493753869479_4b703f4119efe3d7d0ff_36.png\"",\""image_48\"":\""https:\\/\\/avatars.slack-edge.com\\/2018-11-30\\/493753869479_4b703f4119efe3d7d0ff_48.png\"",\""image_72\"":\""https:\\/\\/avatars.slack-edge.com\\/2018-11-30\\/493753869479_4b703f4119efe3d7d0ff_72.png\""},\""team_id\"":\""T0HTVG8PJ\""},\""blocks\"":[{\""type\"":\""section\"",\""block_id\"":\""no:ih:58907::1b8015e0baa311f082373bb3f342ebd7\"",\""text\"":{\""type\"":\""mrkdwn\"",\""text\"":\""*Taryn D'Esterre created a [System] Incident*\
+*<https:\\/\\/instinctvet.atlassian.net\\/browse\\/ISD-12764?atlOrigin=eyJpIjoiYjllYzNmZjQ2NjVmNDY4YWExM2FjY2M3OGVlOTA2ZjAiLCJwIjoiamlyYS1zbGFjay1pbnQifQ|ISD-12764 Instinct crashing when accessing patient ax sheet>*\
+When attempting to access ax sheet for patient 447094 currently under anesthesia, Instinct crashes. Affecting all users, able to replicate when we attempt same steps for same patient.\"",\""verbatim\"":false}},{\""type\"":\""context\"",\""block_id\"":\""no:cx:58907::1b8015e1baa311f082373bb3f342ebd7\"",\""elements\"":[{\""type\"":\""mrkdwn\"",\""text\"":\""Status: *Open*\"",\""verbatim\"":false},{\""type\"":\""mrkdwn\"",\""text\"":\""Type: *[System] Incident*\"",\""verbatim\"":false},{\""type\"":\""image\"",\""image_url\"":\""https:\\/\\/product-integrations-cdn.atl-paas.net\\/icons\\/unknown-user.png\"",\""alt_text\"":\""Unassigned\""},{\""type\"":\""mrkdwn\"",\""text\"":\""Assignee: *Unassigned*\"",\""verbatim\"":false},{\""type\"":\""image\"",\""image_url\"":\""https:\\/\\/product-integrations-cdn.atl-paas.net\\/jira-priority\\/medium.png\"",\""alt_text\"":\""Medium\""},{\""type\"":\""mrkdwn\"",\""text\"":\""Priority: *Medium*\"",\""verbatim\"":false}]},{\""type\"":\""actions\"",\""block_id\"":\""no:issueFooterActions:58907::1b8015e2baa311f082373bb3f342ebd7\"",\""elements\"":[{\""type\"":\""button\"",\""action_id\"":\""{\\\""issueId\\\"":\\\""58907\\\"",\\\""instanceId\\\"":\\\""2cf2bebd-2bf8-3c5f-9d85-b6c8d44fd12a\\\"",\\\""projectId\\\"":\\\""10109\\\"",\\\""action\\\"":\\\""transition\\\"",\\\""nType\\\"":\\\""ISSUE_CREATED\\\"",\\\""nPlace\\\"":\\\""main\\\""}\"",\""text\"":{\""type\"":\""plain_text\"",\""text\"":\""Transition\"",\""emoji\"":true},\""value\"":\""transition\""},{\""type\"":\""static_select\"",\""action_id\"":\""{\\\""issueId\\\"":\\\""58907\\\"",\\\""instanceId\\\"":\\\""2cf2bebd-2bf8-3c5f-9d85-b6c8d44fd12a\\\"",\\\""projectId\\\"":\\\""10109\\\"",\\\""nType\\\"":\\\""ISSUE_CREATED\\\"",\\\""nPlace\\\"":\\\""menu\\\""}\"",\""placeholder\"":{\""type\"":\""plain_text\"",\""text\"":\""More actions...\"",\""emoji\"":true},\""options\"":[{\""text\"":{\""type\"":\""plain_text\"",\""text\"":\""Watch\"",\""emoji\"":true},\""value\"":\""watch\""},{\""text\"":{\""type\"":\""plain_text\"",\""text\"":\""Comment\"",\""emoji\"":true},\""value\"":\""comment\""},{\""text\"":{\""type\"":\""plain_text\"",\""text\"":\""Assign\"",\""emoji\"":true},\""value\"":\""assign\""},{\""text\"":{\""type\"":\""plain_text\"",\""text\"":\""Why am I seeing this?\"",\""emoji\"":true},\""value\"":\""why\""},{\""text\"":{\""type\"":\""plain_text\"",\""text\"":\"":tada: Give kudos\"",\""emoji\"":true},\""value\"":\""kudos\""}]}]}],\""channel\"":\""C615MLUPP\"",\""event_ts\"":\""1762387015.296739\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09QWRGA84B\"",\""event_time\"":1762387015,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkM2MTVNTFVQUCJ9\""}"", ""isBase64Encoded"": false}
+"
+1762387084442,"⚠️ Processing Slack retry event - Retry #2, Reason: http_timeout
+"
+1762387084442,"Event deduplication - Channel: C615MLUPP, User: U86FMV8AE, Issue: ISD-12764, Timestamp: 1762387015.296739
+"
+1762387084442,"Message type: bot, Bot ID: B87HWGEMD, App ID: A2RPP3NFR, Subtype: 
+"
+1762387084442,"Slack event_id: 
+"
+1762387084442,"Generated event ID: 2237a31683e3575f
+"
+1762387084442,"Text preview: Taryn D'Esterre created a [System] Incident ISD-12764 Instinct crashing when accessing patient ax sh...
+"
+1762387084442,"Current cache size: 9
+"
+1762387084442,"Current cache contents: ['2c29796e509e2df6', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '8815cf6527eb4a03', '0ecf55ac64e2432a']
+"
+1762387084442,"Checking if event 2237a31683e3575f is already processed...
+"
+1762387084442,"❌ Duplicate event detected in cache, skipping: 2237a31683e3575f
+"
+1762387084463,"END RequestId: 26383507-a805-48af-a8ed-697cd80633e9
+"
+1762387084463,"REPORT RequestId: 26383507-a805-48af-a8ed-697cd80633e9	Duration: 25.82 ms	Billed Duration: 26 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387092526,"START RequestId: 7359f61d-8d00-4c63-b906-a5cd0764892b Version: $LATEST
+"
+1762387092527,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""1051"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be494-58d80931527318e33180938e"", ""x-forwarded-for"": ""44.192.69.178"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387092"", ""x-slack-signature"": ""v0=71980a9a66dfaf2997ed565a461b72e9d27c3a4ae1721a07b41aa9331b1bf34b""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""44.192.69.178"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCnQgMFIAMEVig="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:58:12 +0000"", ""timeEpoch"": 1762387092499}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""U7GRUL4TY\"",\""ts\"":\""1762387091.365099\"",\""client_msg_id\"":\""DEEB6129-C6A1-4BDA-B75D-18220C523E81\"",\""text\"":\""I\\u2019m driving home and will get there in a few \"",\""team\"":\""T0HTVG8PJ\"",\""thread_ts\"":\""1762387025.677779\"",\""parent_user_id\"":\""U09584DT15X\"",\""blocks\"":[{\""type\"":\""rich_text\"",\""block_id\"":\""gHwr8\"",\""elements\"":[{\""type\"":\""rich_text_section\"",\""elements\"":[{\""type\"":\""text\"",\""text\"":\""I\\u2019m\""},{\""type\"":\""text\"",\""text\"":\"" driving home and will get there in a few \""}]}]}],\""channel\"":\""C615MLUPP\"",\""event_ts\"":\""1762387091.365099\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09QZQ6QBV3\"",\""event_time\"":1762387091,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkM2MTVNTFVQUCJ9\""}"", ""isBase64Encoded"": false}
+"
+1762387092527,"Event deduplication - Channel: C615MLUPP, User: U7GRUL4TY, Issue: , Timestamp: 1762387091.365099
+"
+1762387092527,"Message type: user, Bot ID: , App ID: , Subtype: 
+"
+1762387092527,"Slack event_id: 
+"
+1762387092527,"Generated event ID: 366f871b88691834
+"
+1762387092527,"Text: I’m driving home and will get there in a few 
+"
+1762387092527,"Current cache size: 9
+"
+1762387092527,"Current cache contents: ['2c29796e509e2df6', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '8815cf6527eb4a03', '0ecf55ac64e2432a']
+"
+1762387092527,"Checking if event 366f871b88691834 is already processed...
+"
+1762387092542,"Event 366f871b88691834 not found in DynamoDB, can process
+"
+1762387092562,"Marked event 366f871b88691834 as processed in DynamoDB
+"
+1762387092562,"✅ New event detected: 366f871b88691834
+"
+1762387092562,"Added to cache: 366f871b88691834 (cache size: 10)
+"
+1762387092562,"Processing message: I’m driving home and will get there in a few 
+"
+1762387092562,"No Jira issue key found in text: I’m driving home and will get there in a few 
+"
+1762387092582,"END RequestId: 7359f61d-8d00-4c63-b906-a5cd0764892b
+"
+1762387092582,"REPORT RequestId: 7359f61d-8d00-4c63-b906-a5cd0764892b	Duration: 55.09 ms	Billed Duration: 56 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387115232,"START RequestId: 0bed0a67-9eff-42a3-a8a2-43dc103bad74 Version: $LATEST
+"
+1762387115233,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""721"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be4ab-52ee8ec37987c4e5617b2ea1"", ""x-forwarded-for"": ""13.222.53.167"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387115"", ""x-slack-signature"": ""v0=d06255be50dc7c39158b844af4000fbed9db08f8750004c6dcbe81051e229a39""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""13.222.53.167"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCq0gPIoAMEYdg="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:58:35 +0000"", ""timeEpoch"": 1762387115204}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""subtype\"":\""channel_join\"",\""user\"":\""U7GRUL4TY\"",\""text\"":\""<@U7GRUL4TY> has joined the channel\"",\""ts\"":\""1762387114.055619\"",\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387114.055619\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09QMQ51AJ3\"",\""event_time\"":1762387114,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387115233,"Event deduplication - Channel: C09R37Z40US, User: U7GRUL4TY, Issue: , Timestamp: 1762387114.055619
+"
+1762387115233,"Message type: user_channel_join, Bot ID: , App ID: , Subtype: channel_join
+"
+1762387115233,"Slack event_id: 
+"
+1762387115233,"Generated event ID: e6581c8b87268dca
+"
+1762387115233,"Text: <@U7GRUL4TY> has joined the channel
+"
+1762387115233,"Current cache size: 10
+"
+1762387115233,"Current cache contents: ['2c29796e509e2df6', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '8815cf6527eb4a03', '0ecf55ac64e2432a', '366f871b88691834']
+"
+1762387115233,"Checking if event e6581c8b87268dca is already processed...
+"
+1762387115242,"Event e6581c8b87268dca not found in DynamoDB, can process
+"
+1762387115262,"Marked event e6581c8b87268dca as processed in DynamoDB
+"
+1762387115262,"✅ New event detected: e6581c8b87268dca
+"
+1762387115262,"Added to cache: e6581c8b87268dca (cache size: 11)
+"
+1762387115262,"Processing message: <@U7GRUL4TY> has joined the channel
+"
+1762387115262,"No Jira issue key found in text: <@U7GRUL4TY> has joined the channel
+"
+1762387115282,"END RequestId: 0bed0a67-9eff-42a3-a8a2-43dc103bad74
+"
+1762387115282,"REPORT RequestId: 0bed0a67-9eff-42a3-a8a2-43dc103bad74	Duration: 49.38 ms	Billed Duration: 50 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387121896,"START RequestId: d2915837-d197-44b0-8889-2d6066144e2f Version: $LATEST
+"
+1762387121897,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""749"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be4b1-52a629712d14e5d0650e66c8"", ""x-forwarded-for"": ""34.235.128.84"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387121"", ""x-slack-signature"": ""v0=31cfae9c1a7f74b413a1c16e889f9649b66ada6e0165521ac074dc193eaab647""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""34.235.128.84"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCr2hXbIAMEbWg="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:58:41 +0000"", ""timeEpoch"": 1762387121871}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""subtype\"":\""channel_join\"",\""user\"":\""U07HRM0NP6J\"",\""text\"":\""<@U07HRM0NP6J> has joined the channel\"",\""inviter\"":\""U04DH7B5K26\"",\""ts\"":\""1762387120.834139\"",\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387120.834139\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09QZQ8SLCV\"",\""event_time\"":1762387120,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387121897,"Event deduplication - Channel: C09R37Z40US, User: U07HRM0NP6J, Issue: , Timestamp: 1762387120.834139
+"
+1762387121897,"Message type: user_channel_join, Bot ID: , App ID: , Subtype: channel_join
+"
+1762387121897,"Slack event_id: 
+"
+1762387121897,"Generated event ID: 20d5c44d098a064b
+"
+1762387121897,"Text: <@U07HRM0NP6J> has joined the channel
+"
+1762387121897,"Current cache size: 11
+"
+1762387121897,"Current cache contents: ['2c29796e509e2df6', 'e6581c8b87268dca', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '8815cf6527eb4a03', '0ecf55ac64e2432a', '366f871b88691834']
+"
+1762387121897,"Checking if event 20d5c44d098a064b is already processed...
+"
+1762387121903,"Event 20d5c44d098a064b not found in DynamoDB, can process
+"
+1762387121922,"Marked event 20d5c44d098a064b as processed in DynamoDB
+"
+1762387121922,"✅ New event detected: 20d5c44d098a064b
+"
+1762387121922,"Added to cache: 20d5c44d098a064b (cache size: 12)
+"
+1762387121922,"Processing message: <@U07HRM0NP6J> has joined the channel
+"
+1762387121922,"No Jira issue key found in text: <@U07HRM0NP6J> has joined the channel
+"
+1762387121942,"END RequestId: d2915837-d197-44b0-8889-2d6066144e2f
+"
+1762387121942,"REPORT RequestId: d2915837-d197-44b0-8889-2d6066144e2f	Duration: 45.20 ms	Billed Duration: 46 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387140014,"START RequestId: db71c928-e1da-4686-892e-f7da8daa7d65 Version: $LATEST
+"
+1762387140015,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""725"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be4c3-7dae22e27509fb870a6d4fcb"", ""x-forwarded-for"": ""98.92.55.208"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387139"", ""x-slack-signature"": ""v0=1d758843463e9c936138a4f2e9b272b3984edbc4b70588a4ace5554d5b185397""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""98.92.55.208"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCuriuRoAMEVwg="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:58:59 +0000"", ""timeEpoch"": 1762387139986}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""subtype\"":\""channel_join\"",\""user\"":\""U05SFQYMGG0\"",\""text\"":\""<@U05SFQYMGG0> has joined the channel\"",\""ts\"":\""1762387138.520209\"",\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387138.520209\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09RXH6RCQG\"",\""event_time\"":1762387138,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387140015,"Event deduplication - Channel: C09R37Z40US, User: U05SFQYMGG0, Issue: , Timestamp: 1762387138.520209
+"
+1762387140015,"Message type: user_channel_join, Bot ID: , App ID: , Subtype: channel_join
+"
+1762387140015,"Slack event_id: 
+"
+1762387140015,"Generated event ID: 4f5a6d274b6e7c81
+"
+1762387140015,"Text: <@U05SFQYMGG0> has joined the channel
+"
+1762387140015,"Current cache size: 12
+"
+1762387140015,"Current cache contents: ['2c29796e509e2df6', 'e6581c8b87268dca', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '20d5c44d098a064b', '8815cf6527eb4a03', '0ecf55ac64e2432a', '366f871b88691834']
+"
+1762387140015,"Checking if event 4f5a6d274b6e7c81 is already processed...
+"
+1762387140022,"Event 4f5a6d274b6e7c81 not found in DynamoDB, can process
+"
+1762387140042,"Marked event 4f5a6d274b6e7c81 as processed in DynamoDB
+"
+1762387140042,"✅ New event detected: 4f5a6d274b6e7c81
+"
+1762387140042,"Added to cache: 4f5a6d274b6e7c81 (cache size: 13)
+"
+1762387140042,"Processing message: <@U05SFQYMGG0> has joined the channel
+"
+1762387140042,"No Jira issue key found in text: <@U05SFQYMGG0> has joined the channel
+"
+1762387140062,"END RequestId: db71c928-e1da-4686-892e-f7da8daa7d65
+"
+1762387140062,"REPORT RequestId: db71c928-e1da-4686-892e-f7da8daa7d65	Duration: 47.15 ms	Billed Duration: 48 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387149106,"START RequestId: df10efe8-0247-4401-b980-b89df7a34837 Version: $LATEST
+"
+1762387149107,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""1157"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be4cd-7a8a26c07d035cff6eb5d5aa"", ""x-forwarded-for"": ""34.201.29.47"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387149"", ""x-slack-signature"": ""v0=77af4fa334aa9cbf9cdc7b399a98ec20059219f1da3e542bf3368ccb3ac62350""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""34.201.29.47"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCwGjXpIAMEV6A="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:59:09 +0000"", ""timeEpoch"": 1762387149082}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""U7GRUL4TY\"",\""ts\"":\""1762387147.788339\"",\""client_msg_id\"":\""16ACA95A-35A1-4E22-9F3A-5450DA9EC6DA\"",\""text\"":\""Hi I\\u2019m driving home and can take a look in a few when I get there. I appreciate if anyone online can look into it \"",\""team\"":\""T0HTVG8PJ\"",\""blocks\"":[{\""type\"":\""rich_text\"",\""block_id\"":\""Vv+8o\"",\""elements\"":[{\""type\"":\""rich_text_section\"",\""elements\"":[{\""type\"":\""text\"",\""text\"":\""Hi \""},{\""type\"":\""text\"",\""text\"":\""I\\u2019m\""},{\""type\"":\""text\"",\""text\"":\"" driving home and can take a look in a few when I get there. I appreciate if anyone online can look into it \""}]}]}],\""channel\"":\""C09R37Z40US\"",\""event_ts\"":\""1762387147.788339\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09RG5BSZ6V\"",\""event_time\"":1762387147,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387149107,"Event deduplication - Channel: C09R37Z40US, User: U7GRUL4TY, Issue: , Timestamp: 1762387147.788339
+"
+1762387149107,"Message type: user, Bot ID: , App ID: , Subtype: 
+"
+1762387149107,"Slack event_id: 
+"
+1762387149107,"Generated event ID: 932193dbfc250b45
+"
+1762387149107,"Text preview: Hi I’m driving home and can take a look in a few when I get there. I appreciate if anyone online can...
+"
+1762387149107,"Current cache size: 13
+"
+1762387149107,"Current cache contents: ['2c29796e509e2df6', 'e6581c8b87268dca', '4f5a6d274b6e7c81', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '20d5c44d098a064b', '8815cf6527eb4a03', '0ecf55ac64e2432a', '366f871b88691834']
+"
+1762387149107,"Checking if event 932193dbfc250b45 is already processed...
+"
+1762387149144,"Event 932193dbfc250b45 not found in DynamoDB, can process
+"
+1762387149181,"Marked event 932193dbfc250b45 as processed in DynamoDB
+"
+1762387149181,"✅ New event detected: 932193dbfc250b45
+"
+1762387149181,"Added to cache: 932193dbfc250b45 (cache size: 14)
+"
+1762387149181,"Processing message: Hi I’m driving home and can take a look in a few when I get there. I appreciate if anyone online can look into it 
+"
+1762387149181,"No Jira issue key found in text: Hi I’m driving home and can take a look in a few when I get there. I appreciate if anyone online can look into it 
+"
+1762387149202,"END RequestId: df10efe8-0247-4401-b980-b89df7a34837
+"
+1762387149202,"REPORT RequestId: df10efe8-0247-4401-b980-b89df7a34837	Duration: 95.21 ms	Billed Duration: 96 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
+1762387155845,"START RequestId: fa0b312d-9b64-49c1-8af0-3aed54fcd0e2 Version: $LATEST
+"
+1762387155845,"Incoming event: {""version"": ""2.0"", ""routeKey"": ""ANY /FireBotHandler"", ""rawPath"": ""/default/FireBotHandler"", ""rawQueryString"": """", ""headers"": {""accept"": ""*/*"", ""accept-encoding"": ""gzip,deflate"", ""content-length"": ""2083"", ""content-type"": ""application/json"", ""host"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""user-agent"": ""Slackbot 1.0 (+https://api.slack.com/robots)"", ""x-amzn-trace-id"": ""Root=1-690be4d3-7dbc72577a2c1560044354d0"", ""x-forwarded-for"": ""54.83.88.162"", ""x-forwarded-port"": ""443"", ""x-forwarded-proto"": ""https"", ""x-slack-request-timestamp"": ""1762387155"", ""x-slack-signature"": ""v0=ab09474c01f17fd01e1c12159180a1bf6fccb031fbc1cd0f3d0e7a25b12608b1""}, ""requestContext"": {""accountId"": ""932418557441"", ""apiId"": ""ewuqfi20we"", ""domainName"": ""ewuqfi20we.execute-api.us-east-1.amazonaws.com"", ""domainPrefix"": ""ewuqfi20we"", ""http"": {""method"": ""POST"", ""path"": ""/default/FireBotHandler"", ""protocol"": ""HTTP/1.1"", ""sourceIp"": ""54.83.88.162"", ""userAgent"": ""Slackbot 1.0 (+https://api.slack.com/robots)""}, ""requestId"": ""TmCxKh-wIAMESfg="", ""routeKey"": ""ANY /FireBotHandler"", ""stage"": ""default"", ""time"": ""05/Nov/2025:23:59:15 +0000"", ""timeEpoch"": 1762387155818}, ""body"": ""{\""token\"":\""yTCGYegH7po27Am2zZoq0gID\"",\""team_id\"":\""T0HTVG8PJ\"",\""context_team_id\"":\""T0HTVG8PJ\"",\""context_enterprise_id\"":null,\""api_app_id\"":\""A094WLLT2TE\"",\""event\"":{\""type\"":\""message\"",\""user\"":\""USLACKBOT\"",\""channel\"":\""C09R37Z40US\"",\""room\"":{\""id\"":\""R09R16TSSFQ\"",\""name\"":\""\"",\""media_server\"":\""\"",\""created_by\"":\""U05SFQYMGG0\"",\""date_start\"":1762387153,\""date_end\"":0,\""participants\"":[\""U05SFQYMGG0\""],\""participant_history\"":[\""U05SFQYMGG0\""],\""participants_events\"":{\""U05SFQYMGG0\"":{\""user_team\"":{},\""joined\"":true,\""camera_on\"":false,\""camera_off\"":false,\""screenshare_on\"":false,\""screenshare_off\"":false}},\""participants_camera_on\"":[],\""participants_camera_off\"":[],\""participants_screenshare_on\"":[],\""participants_screenshare_off\"":[],\""canvas_thread_ts\"":\""1762387154.098629\"",\""thread_root_ts\"":\""1762387154.098629\"",\""channels\"":[\""C09R37Z40US\""],\""is_dm_call\"":false,\""was_rejected\"":false,\""was_missed\"":false,\""was_accepted\"":false,\""has_ended\"":false,\""background_id\"":\""BIRDSONG\"",\""canvas_background\"":\""BIRDSONG\"",\""is_prewarmed\"":false,\""is_scheduled\"":false,\""recording\"":{\""can_record_summary\"":\""available\""},\""locale\"":\""en-US\"",\""attached_file_ids\"":[],\""media_backend_type\"":\""free_willy\"",\""display_id\"":\""\"",\""external_unique_id\"":\""a84d572d-e8fc-42b6-9501-7662375f2713\"",\""app_id\"":\""A00\"",\""call_family\"":\""huddle\"",\""pending_invitees\"":{},\""last_invite_status_by_user\"":{},\""knocks\"":{},\""huddle_link\"":\""https:\\/\\/app.slack.com\\/huddle\\/T0HTVG8PJ\\/C09R37Z40US\""},\""no_notifications\"":true,\""permalink\"":\""https:\\/\\/instinctvet.slack.com\\/call\\/R09R16TSSFQ\"",\""subtype\"":\""huddle_thread\"",\""ts\"":\""1762387154.098629\"",\""text\"":\""\"",\""team\"":\""T0HTVG8PJ\"",\""blocks\"":[{\""type\"":\""rich_text\"",\""block_id\"":\""UoEcF\"",\""elements\"":[{\""type\"":\""rich_text_section\"",\""elements\"":[{\""type\"":\""text\"",\""text\"":\""A huddle started\""}]}]}],\""event_ts\"":\""1762387154.098629\"",\""channel_type\"":\""channel\""},\""type\"":\""event_callback\"",\""event_id\"":\""Ev09R6QQ923E\"",\""event_time\"":1762387154,\""authorizations\"":[{\""enterprise_id\"":null,\""team_id\"":\""T0HTVG8PJ\"",\""user_id\"":\""U09584DT15X\"",\""is_bot\"":true,\""is_enterprise_install\"":false}],\""is_ext_shared_channel\"":false,\""event_context\"":\""4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUMEhUVkc4UEoiLCJhaWQiOiJBMDk0V0xMVDJURSIsImNpZCI6IkMwOVIzN1o0MFVTIn0\""}"", ""isBase64Encoded"": false}
+"
+1762387155845,"Event deduplication - Channel: C09R37Z40US, User: USLACKBOT, Issue: , Timestamp: 1762387154.098629
+"
+1762387155845,"Message type: user_huddle_thread, Bot ID: , App ID: , Subtype: huddle_thread
+"
+1762387155845,"Slack event_id: 
+"
+1762387155845,"Generated event ID: 4becf6a69e262f86
+"
+1762387155845,"Text: 
+"
+1762387155845,"Current cache size: 14
+"
+1762387155846,"Current cache contents: ['2c29796e509e2df6', 'e6581c8b87268dca', '4f5a6d274b6e7c81', '21c66745a5d457b5', '43ce7ade3a6025fd', '454dd582f4280416', '2237a31683e3575f', '932193dbfc250b45', '3a7fbcf8d000805e', '0ea2c0e473f7f703', '20d5c44d098a064b', '8815cf6527eb4a03', '0ecf55ac64e2432a', '366f871b88691834']
+"
+1762387155846,"Checking if event 4becf6a69e262f86 is already processed...
+"
+1762387155861,"Event 4becf6a69e262f86 not found in DynamoDB, can process
+"
+1762387155901,"Marked event 4becf6a69e262f86 as processed in DynamoDB
+"
+1762387155901,"✅ New event detected: 4becf6a69e262f86
+"
+1762387155901,"Added to cache: 4becf6a69e262f86 (cache size: 15)
+"
+1762387155901,"Processing message: 
+"
+1762387155901,"No Jira issue key found in text: 
+"
+1762387155903,"END RequestId: fa0b312d-9b64-49c1-8af0-3aed54fcd0e2
+"
+1762387155903,"REPORT RequestId: fa0b312d-9b64-49c1-8af0-3aed54fcd0e2	Duration: 57.67 ms	Billed Duration: 58 ms	Memory Size: 128 MB	Max Memory Used: 112 MB	
+"
