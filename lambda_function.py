@@ -34,11 +34,19 @@ JIRA_DOMAIN = os.environ["JIRA_DOMAIN"]
 GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 # Optional: SLACK_BOT_USER_ID can be set to help prevent duplicate processing
 # Use a valid model name with fallback
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
-# Map old model names to new ones
+# Updated to use current Gemini 2.x models (Gemini 1.x retired as of 2025)
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+# Map old model names to current Gemini 2.x versions
 MODEL_MAPPING = {
-    "gemini-pro": "gemini-1.5-pro",
-    "gemini-pro-vision": "gemini-1.5-pro",
+    "gemini-pro": "gemini-2.5-flash",
+    "gemini-pro-vision": "gemini-2.5-pro",
+    "gemini-1.5-flash": "gemini-2.5-flash",
+    "gemini-1.5-pro": "gemini-2.5-pro",
+    "gemini-1.5-flash-latest": "gemini-2.5-flash",
+    "gemini-1.5-pro-latest": "gemini-2.5-pro",
+    "gemini-1.0-pro": "gemini-2.5-flash",
+    "gemini-1.5-flash-002": "gemini-2.5-flash",
+    "gemini-1.5-pro-002": "gemini-2.5-pro",
 }
 if GEMINI_MODEL in MODEL_MAPPING:
     GEMINI_MODEL = MODEL_MAPPING[GEMINI_MODEL]
@@ -1373,8 +1381,9 @@ Format: Thank reporter briefly, then list specific actionable requests for each 
             "temperature": 0.3,        # More focused/deterministic
             "top_p": 0.8              # More focused token selection
         }
-        
-        fallback_models = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
+
+        # Updated to use current Gemini 2.x models (Gemini 1.x retired as of 2025)
+        fallback_models = ["gemini-2.5-flash", "gemini-2.0-flash"]
         models_to_try = [GEMINI_MODEL] + [m for m in fallback_models if m != GEMINI_MODEL]
         
         for model_name in models_to_try:
@@ -1548,7 +1557,8 @@ def generate_gemini_summary(data):
     """Generates a summary of a Jira ticket using the Gemini API."""
     print(f"🔍 generate_gemini_summary called with data keys: {list(data.keys())}")
 
-    fallback_models = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
+    # Updated to use current Gemini 2.x models (Gemini 1.x retired as of 2025)
+    fallback_models = ["gemini-2.5-flash", "gemini-2.0-flash"]
     models_to_try = [GEMINI_MODEL] + [m for m in fallback_models if m != GEMINI_MODEL]
 
     print(f"📋 Models to try: {models_to_try}")
@@ -2820,7 +2830,8 @@ Please provide a structured summary that includes:
 
 Keep it professional and factual. Focus on the most important information for documentation."""
 
-        fallback_models = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
+        # Updated to use current Gemini 2.x models (Gemini 1.x retired as of 2025)
+        fallback_models = ["gemini-2.5-flash", "gemini-2.0-flash"]
         models_to_try = [GEMINI_MODEL] + [m for m in fallback_models if m != GEMINI_MODEL]
         
         for model_name in models_to_try:
@@ -3102,6 +3113,29 @@ def format_hospital_for_channel(hospital_name):
     print(f"Formatted hospital name '{hospital_name}' to '{formatted}'")
     return formatted
 
+def override_screenshot_status(checklist_results, attachments):
+    """
+    Programmatically override screenshot status based on actual attachments.
+    If attachments exist, force "Screenshots provided" to be marked as FOUND.
+    This ensures we never ask for screenshots when they're already attached.
+    """
+    if len(attachments) > 0:
+        screenshot_item_name = "Screenshots provided"
+
+        # Remove from missing_items if present
+        checklist_results["missing_items"] = [
+            item for item in checklist_results.get("missing_items", [])
+            if item != screenshot_item_name
+        ]
+
+        # Add to found_items if not already there
+        if screenshot_item_name not in checklist_results.get("found_items", []):
+            checklist_results.setdefault("found_items", []).append(screenshot_item_name)
+
+        print(f"✅ Override: Marked 'Screenshots provided' as FOUND ({len(attachments)} attachment(s) detected)")
+
+    return checklist_results
+
 def analyze_incident_checklist(parsed_data, full_ticket, attachments):
     """Analyze ticket against specific investigation checklist items"""
     try:
@@ -3111,6 +3145,10 @@ def analyze_incident_checklist(parsed_data, full_ticket, attachments):
         status = fields.get("status", {}).get("name", "Unknown")
         created = fields.get("created", "Unknown")
         
+        # Determine screenshot status based on actual attachments
+        screenshot_status = "FOUND" if len(attachments) > 0 else "needs analysis"
+        screenshot_instruction = f"FOUND - {len(attachments)} media file(s) are attached" if len(attachments) > 0 else "Are screenshots or visual evidence included?"
+
         # Create a structured analysis prompt for the 7 specific items
         prompt = f"""You are an incident response assistant for a veterinary software company. Analyze this Jira ticket against our investigation checklist.
 
@@ -3130,7 +3168,7 @@ INVESTIGATION CHECKLIST:
 1. Issue replication in customer's application - Has the reporter confirmed they can reproduce this issue in their own application? Look for statements about current impact.
 2. Issue replication on Demo instance - Has anyone tested this on our Demo/staging environment?
 3. Steps to reproduce - Are clear, step-by-step reproduction instructions provided?
-4. Screenshots provided - Are screenshots or visual evidence included? (We found {len(attachments)} media files)
+4. Screenshots provided - {screenshot_instruction}
 5. Problem start time - When did this issue first start occurring for the customer? Look for any timing information in the description.
 6. Practice-wide impact - Is this affecting the entire practice/all users, or just specific users? Look for statements about scope of impact.
 7. Multi-practice impact - Are other veterinary practices experiencing this same issue?
@@ -3144,9 +3182,12 @@ For each item, respond in this exact format:
 6. [FOUND/MISSING]: Brief explanation
 7. [FOUND/MISSING]: Brief explanation
 
+IMPORTANT: For item 4 (Screenshots), if we found {len(attachments)} media files attached to the ticket, you MUST mark it as "FOUND" since attachments are already present.
+
 Be thorough but concise in your analysis. If information is clearly stated in the description, mark it as FOUND and quote the relevant text."""
 
-        fallback_models = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
+        # Updated to use current Gemini 2.x models (Gemini 1.x retired as of 2025)
+        fallback_models = ["gemini-2.5-flash", "gemini-2.0-flash"]
         models_to_try = [GEMINI_MODEL] + [m for m in fallback_models if m != GEMINI_MODEL]
         
         for model_name in models_to_try:
@@ -3158,22 +3199,28 @@ Be thorough but concise in your analysis. If information is clearly stated in th
                 if hasattr(response, 'text') and response.text:
                     analysis = response.text.strip()
                     print(f"Successfully analyzed incident checklist with model: {model_name}")
-                    return parse_checklist_analysis(analysis)
+                    results = parse_checklist_analysis(analysis)
+                    # Override screenshot status if attachments exist
+                    return override_screenshot_status(results, attachments)
                 elif response.parts:
                     analysis_text = ''.join(part.text for part in response.parts if hasattr(part, 'text'))
                     if analysis_text:
                         print(f"Successfully analyzed incident checklist with model: {model_name}")
-                        return parse_checklist_analysis(analysis_text.strip())
+                        results = parse_checklist_analysis(analysis_text.strip())
+                        # Override screenshot status if attachments exist
+                        return override_screenshot_status(results, attachments)
                 
             except Exception as e:
                 print(f"Error with model {model_name}: {e}")
                 continue
-        
-        return create_default_checklist_result()
-        
+
+        # Apply override even for default results
+        return override_screenshot_status(create_default_checklist_result(), attachments)
+
     except Exception as e:
         print(f"Error analyzing incident checklist: {e}")
-        return create_default_checklist_result()
+        # Apply override even for default results
+        return override_screenshot_status(create_default_checklist_result(), attachments)
 
 def parse_checklist_analysis(analysis_text):
     """Parse the AI analysis into structured checklist results"""
