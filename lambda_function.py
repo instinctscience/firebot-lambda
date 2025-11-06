@@ -991,8 +991,8 @@ def process_fire_ticket(event_data, user_id):
                 print(f"Error type: {type(e).__name__}")
                 import traceback
                 print(f"Traceback: {traceback.format_exc()}")
-                # Still post a message so users know what happened
-                post_summary_message(channel_id, f"⚠️ Summary generation failed: {str(e)}")
+                # Post generic error message to Slack (details logged to CloudWatch above)
+                post_summary_message(channel_id, "Could not generate summary.")
         else:
             print(f"Summary for {issue_key} already posted, skipping")
         
